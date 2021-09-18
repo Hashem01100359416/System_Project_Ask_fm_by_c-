@@ -63,7 +63,6 @@ struct qouestion_thread
         Answer = "NOT Answer yet Please wait...";
         User_Name_to = Name_from_User = question = "";
     }
-
 };
 void Up_dawnloud_Data_User(map<string, user>&);
 void Update_UPloud_Data_MQ(map<int, main_question>&);
@@ -108,8 +107,8 @@ void Project_Ask_me()
         {
         case 1:
             s = login_user(User);
-            break;
         case 2:
+            break;
             s = sign_up_user(User);
             break;
         }
@@ -127,29 +126,46 @@ void Project_Ask_me()
 
             switch (Choose_Menue2())
             {
+            case 1:
                 Up_dawnloud_Data_User(User);
                 Update_dawnloud_Data_MQ(MQ);
                 Update_dawnloud_Data_TQ(TQ);
-
-            case 1:
                 Print_Questions_To_Me(User, MQ, TQ, s);
                 break;
             case 2:
+                Up_dawnloud_Data_User(User);
+                Update_dawnloud_Data_MQ(MQ);
+                Update_dawnloud_Data_TQ(TQ);
                 Print_Questions_From_Me(User, MQ, TQ, s);
                 break;
             case 3:
+                Up_dawnloud_Data_User(User);
+                Update_dawnloud_Data_MQ(MQ);
+                Update_dawnloud_Data_TQ(TQ);
                 Answer_Question(User, MQ, TQ, s);
                 break;
             case 4:
+                Up_dawnloud_Data_User(User);
+                Update_dawnloud_Data_MQ(MQ);
+                Update_dawnloud_Data_TQ(TQ);
                 Delete_Question(User, MQ, TQ, s);
                 break;
             case 5:
+                Up_dawnloud_Data_User(User);
+                Update_dawnloud_Data_MQ(MQ);
+                Update_dawnloud_Data_TQ(TQ);
                 Ask_Question(User, MQ, TQ, s);
                 break;
             case 6:
+                Up_dawnloud_Data_User(User);
+                Update_dawnloud_Data_MQ(MQ);
+                Update_dawnloud_Data_TQ(TQ);
                 List_System_users(User);
                 break;
             case 7:
+                Up_dawnloud_Data_User(User);
+                Update_dawnloud_Data_MQ(MQ);
+                Update_dawnloud_Data_TQ(TQ);
                 Feed(User, MQ, TQ, s);
                 break;
             case 8:
@@ -160,6 +176,9 @@ void Project_Ask_me()
                 c2++;
                 break;
             }
+            Up_dawnloud_Data_User(User);
+            Update_dawnloud_Data_MQ(MQ);
+            Update_dawnloud_Data_TQ(TQ);
         }
         cout << "\n\nGoodby, " << s << "\n\n\n\a";
         cout << "------------------------------------\n";
@@ -689,8 +708,7 @@ void Answer_Question(map<string, user>& User, map<int, main_question>& MQ, map<i
                     cout << "Enter Answer: ";
                 }
                
-                //cin.ignore();
-
+                cin.ignore();
                 getline(cin, TQ[ID_Q].Answer);
 
      
